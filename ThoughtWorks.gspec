@@ -1,0 +1,53 @@
+@objects
+    HeaderBar		css		.header__header-wrapper
+    Logo			id		tw-logo
+    HeaderMenu		id		main-menu
+    UberTitle       css     .uber-titles
+    MobileHeader	css		.mobile-header
+    MobileMenu		id		mobile-menu-title
+    MobileLogo		id		mobile-tw-logo
+    ArticleBlock-*	css		.curated-article
+    Footer			css		.footer
+
+
+= Header Section =
+    @on desktop
+        HeaderBar:
+            contains Logo, HeaderMenu
+            width 1175px
+            height 77px
+
+        HeaderMenu:
+            visible
+
+    @on mobile
+        HeaderBar:
+            absent
+
+        MobileHeader:
+            contains MobileLogo, MobileMenu
+
+        MobileMenu:
+            visible
+
+= Uber Title =
+    @on desktop, mobile
+        UberTitle:
+            visible
+
+= Article Section =
+    @on desktop
+        ArticleBlock-1:
+            aligned horizontally all ArticleBlock-2
+            aligned horizontally all ArticleBlock-3
+
+    @on mobile
+        ArticleBlock-1:
+            aligned vertically all ArticleBlock-2
+            aligned vertically all ArticleBlock-3
+
+= Footer Section =
+    @on *
+        Footer:
+            visible
+

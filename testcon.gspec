@@ -1,0 +1,60 @@
+@objects
+    Header          id      main-header
+    NavigationBar   id      top-menu-nav
+    Logo			id		logo
+    BuyTicketButton id      menu-item-1602
+    BannerSection	id		et-main-area
+    MobileMenuBar	css		.mobile_menu_bar
+    AboutBlock      id      about
+    Container-*     css	    .container
+    ScheduleBlock	id		schedule
+    TrainingsBlock  id      trainings
+
+= Header Section =
+    @on desktop
+        Header:
+            contains Logo, NavigationBar, BuyTicketButton
+            width 100 % of viewport/width
+            height 68px
+
+        MobileMenuBar:
+            absent
+
+    @on mobile
+        Header:
+            contains Logo, MobileMenuBar
+
+        MobileMenuBar:
+            visible
+
+        BuyTicketButton:
+            absent
+
+= Banner Section =
+    @on desktop, mobile
+        BannerSection:
+            visible 
+
+= Section Blocks=
+    @on desktop
+        AboutBlock:
+            aligned vertically all ScheduleBlock
+            aligned vertically all TrainingsBlock
+
+    @on mobile
+        AboutBlock:
+            aligned vertically all ScheduleBlock
+            aligned vertically all TrainingsBlock
+
+= Container Blocks =
+    @on desktop 
+        Container-1:
+            aligned vertically centered Container-3
+
+    @on mobile 
+        Container-1:
+            aligned vertically all Container-3
+        
+    @on * 
+        Container-2:
+            absent    
